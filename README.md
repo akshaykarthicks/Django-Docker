@@ -1,4 +1,4 @@
-# CodeCraft AI
+## CodeCraft AI
 **Intelligent code generation platform that transforms natural language ideas into production-ready applications through AI-powered development teams.**
 
 • AI-powered multi-agent code generation system  
@@ -6,6 +6,17 @@
 • Natural language to production-ready code transformation  
 
 **AI AGENTS • DEVELOPMENT • PYTHON • REACT • DJANGO**
+## HOME 
+<img width="1626" height="827" alt="Screenshot 2025-08-14 142227" src="https://github.com/user-attachments/assets/62d5226c-5fd0-4611-9003-1cca1f5caf46" />
+
+## OUTPUT RESULT 
+
+<img width="1888" height="1059" alt="Screenshot 2025-08-14 141009" src="https://github.com/user-attachments/assets/f7cf3998-3ea5-4772-935e-d8035524a221" />
+
+## PROMT PAGE 
+
+<img width="1808" height="1036" alt="Screenshot 2025-08-14 141018" src="https://github.com/user-attachments/assets/01c8989c-31bd-49d3-8ff9-e9172524683d" />
+
 
 ---
 
@@ -53,6 +64,9 @@ graph TB
 ```
 
 ## 🤖 CrewAI Agents
+
+<img width="1049" height="455" alt="Screenshot 2025-08-14 141908" src="https://github.com/user-attachments/assets/e94cd5a2-7fc5-4bbb-852f-31f439d60c5f" />
+
 
 The system uses three specialized AI agents working in sequence:
 
@@ -170,38 +184,6 @@ Build me a todo web app in cyberpunk style
 
 **Generated Code:**
 
-**todo_app.py**
-```python
-class TodoApp:
-    def __init__(self):
-        self.tasks = []
-        self.task_id_counter = 1
-    
-    def add_task(self, title, description=""):
-        task = {
-            'id': self.task_id_counter,
-            'title': title,
-            'description': description,
-            'completed': False,
-            'created_at': datetime.now()
-        }
-        self.tasks.append(task)
-        self.task_id_counter += 1
-        return task
-    
-    def complete_task(self, task_id):
-        for task in self.tasks:
-            if task['id'] == task_id:
-                task['completed'] = True
-                return task
-        return None
-    
-    def get_tasks(self, completed=None):
-        if completed is None:
-            return self.tasks
-        return [task for task in self.tasks if task['completed'] == completed]
-```
-
 **index.html** (Cyberpunk styled)
 ```html
 <!DOCTYPE html>
@@ -242,6 +224,8 @@ class TodoApp:
 </body>
 </html>
 ```
+## SAMPLE OUTPUT 
+<img width="963" height="463" alt="Screenshot 2025-08-14 141709" src="https://github.com/user-attachments/assets/77c5ae9d-dd6c-4657-b16e-afe21f8d50cb" />
 
 **Output Files:**
 - `todo_app.py` - Complete Python module with TodoApp class
@@ -254,12 +238,6 @@ class TodoApp:
 - `GET /api/health` - Health check endpoint
 - `GET /api/docs` - Interactive API documentation
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
 
 ## 📄 License
 
