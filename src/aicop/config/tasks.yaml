@@ -1,11 +1,12 @@
 design_task:
   description: >
-    Take the high level requirements described here and prepare a detailed design for the engineer;
-    everything should be in 1 python module, but outline the classes and methods in the module.
+    Take the high level requirements described here and prepare a detailed design for both backend and frontend deliverables.
+    Backend: 1 Python module, outline the classes and methods.
+    Frontend: 1 self-contained HTML file (optionally with small inline CSS/JS) describing key sections, components and interactions.
     Here are the requirements: {requirements}
-    IMPORTANT: Only output the design in markdown format, laying out in detail the classes and functions in the module, describing the functionality.
+    IMPORTANT: Output ONLY markdown. Include two sections: "Backend Design" and "Frontend Design" with clear bullet points and file names.
   expected_output: >
-    A detailed design for the engineer, identifying the classes and functions in the module.
+    A detailed markdown design doc with sections for backend and frontend.
   agent: engineering_lead
   output_file: output/{module_name}_design.md
 
@@ -24,27 +25,17 @@ code_task:
 
 frontend_task:
   description: >
-    Write a gradio UI in a module app.py that demonstrates the given backend class in {module_name}.
-    Assume there is only 1 user, and keep the UI very simple indeed - just a prototype or demo.
+    Produce a self-contained, production-ready HTML5 file named index.html that implements the frontend design.
+    - Use semantic HTML and simple, modern CSS inside a <style> in the <head>.
+    - If needed, add a minimal <script> at the end of <body> with vanilla JS.
+    - The page must be responsive (mobile-first) and accessible (labels, alt text, sensible headings).
+    - If the backend module {module_name} is relevant, include example JSON blocks or code snippets showing how it would integrate, but do not import Python in HTML.
     Here are the requirements: {requirements}
   expected_output: >
-    A gradio UI in module app.py that demonstrates the given backend class.
-    The file should be ready so that it can be run as-is, in the same directory as the backend module, and it should import the backend class from {module_name}.
-    IMPORTANT: Output ONLY the raw Python code without any markdown formatting, code block delimiters, or backticks.
-    The output should be valid Python code that can be directly saved to a file and executed.
+    A single raw HTML document for index.html.
+    IMPORTANT: Output ONLY valid HTML content with <!doctype html> at the top, no markdown, no backticks, no extra text.
   agent: frontend_engineer
   context:
-    - code_task
-  output_file: output/app.py
+    - design_task
+  output_file: output/index.html
 
-test_task:
-  description: >
-    Write unit tests for the given backend module {module_name} and create a test_{module_name} in the same directory as the backend module.
-  expected_output: >
-    A test_{module_name} module that tests the given backend module.
-    IMPORTANT: Output ONLY the raw Python code without any markdown formatting, code block delimiters, or backticks.
-    The output should be valid Python code that can be directly saved to a file and executed.
-  agent: test_engineer
-  context:
-    - code_task
-  output_file: output/test_{module_name}

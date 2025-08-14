@@ -1,227 +1,276 @@
-# 🤖 AICOP - AI-Powered Development Crew
+# CodeCraft AI
+**Intelligent code generation platform that transforms natural language ideas into production-ready applications through AI-powered development teams.**
 
-> **Transform your ideas into working software with AI agents!**
+• AI-powered multi-agent code generation system  
+• Complete full-stack application development  
+• Natural language to production-ready code transformation  
 
-AICOP is an intelligent software development crew powered by [CrewAI](https://crewai.com) that automatically builds complete applications from simple requirements. Just describe what you want, and watch as AI agents collaborate to design, code, test, and create a user interface for your project!
+**AI AGENTS • DEVELOPMENT • PYTHON • REACT • DJANGO**
 
-## 🎯 What Does AICOP Do?
+---
 
-AICOP takes your high-level requirements and transforms them into a complete, working application through a team of specialized AI agents:
+## 🚀 What is CodeCraft AI?
 
-```
-Your Idea → AI Agents → Complete Application
-    ↓           ↓              ↓
-"I need a     🤖 Design      ✅ Working Code
- trading      🤖 Code        ✅ User Interface  
- system"      🤖 Test        ✅ Unit Tests
-              🤖 UI
-```
+CodeCraft AI is an intelligent code generation platform that takes your project ideas in plain English and crafts complete applications with:
+- **Python backend modules** with complete business logic
+- **Frontend HTML/CSS/JS** interfaces
+- **Te
 
-## 🏗️ How It Works - The AI Development Pipeline
+## 🏗️ Architecture
 
 ```mermaid
-graph TD
-    A[📝 Your Requirements] --> B[🎯 Engineering Lead]
-    B --> C[💻 Backend Engineer]
-    C --> D[🎨 Frontend Engineer]
-    C --> E[🧪 Test Engineer]
+graph TB
+    A[React Frontend<br/>Port 3000] -->|HTTP Requests| B[Django Ninja API<br/>Port 8000]
+    B -->|Kickoff Crew| C[CrewAI Orchestrator]
     
-    B --> F[📋 Design Document]
-    C --> G[🐍 Python Code]
-    D --> H[🖥️ Gradio UI]
-    E --> I[✅ Unit Tests]
+    C --> D[Engineering Lead Agent<br/>🏗️ System Design]
+    D --> E[Backend Engineer Agent<br/>🐍 Python Code]
+    E --> F[Frontend Engineer Agent<br/>🌐 HTML/CSS/JS]
     
-    style A fill:#e1f5fe
-    style F fill:#f3e5f5
-    style G fill:#e8f5e8
-    style H fill:#fff3e0
-    style I fill:#fce4ec
+    D -->|Creates| G[Design Document<br/>📋 .md file]
+    E -->|Creates| H[Python Module<br/>🐍 .py file]
+    F -->|Creates| I[Web Interface<br/>🌐 .html file]
+    
+    G --> J[Output Directory<br/>📁 Generated Files]
+    H --> J
+    I --> J
+    
+    J -->|File Contents| B
+    B -->|JSON Response| A
+    
+    subgraph "Docker Container"
+        C
+        D
+        E
+        F
+    end
+    
+    subgraph "Generated Output"
+        G
+        H
+        I
+    end
 ```
 
-### Meet Your AI Development Team
+## 🤖 CrewAI Agents
 
-| Agent | Role | What They Do |
-|-------|------|--------------|
-| 🎯 **Engineering Lead** | Project Manager | Analyzes requirements and creates detailed technical designs |
-| 💻 **Backend Engineer** | Python Developer | Writes clean, efficient Python code based on the design |
-| 🎨 **Frontend Engineer** | UI Developer | Creates simple Gradio web interfaces to demo your app |
-| 🧪 **Test Engineer** | QA Specialist | Writes comprehensive unit tests to ensure code quality |
+The system uses three specialized AI agents working in sequence:
+
+### 1. Engineering Lead
+- **Role**: System architect and design lead
+- **Task**: Analyzes requirements and creates detailed technical design
+- **Output**: Design document with architecture and specifications
+
+### 2. Backend Engineer  
+- **Role**: Python developer
+- **Task**: Implements the design as a complete Python module
+- **Output**: Production-ready Python code with classes and methods
+
+### 3. Frontend Engineer
+- **Role**: Web developer
+- **Task**: Creates responsive HTML/CSS/JS interface
+- **Output**: Self-contained HTML file with modern styling
+
+## 🛠️ Tech Stack
+
+**Backend:**
+- Django 5.1+ with Django Ninja API
+- CrewAI for AI agent orchestration
+- Google Gemini 1.5 Flash LLM
+- SQLite database
+
+**Frontend:**
+- React 18 with modern hooks
+- Tailwind CSS for styling
+- Axios for API communication
+- Lucide React icons
+
+## 📋 Features
+
+- ✨ **Natural Language Input**: Describe your project in plain English
+- 🔄 **Real-time Generation**: Watch as AI agents create your code
+- 📱 **Responsive UI**: Works on desktop and mobile devices
+- 📥 **Download Code**: Get generated files instantly
+- 🎯 **Production Ready**: Generated code follows best practices
+- 🚀 **Fast API**: High-performance Django Ninja endpoints
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.10 - 3.13
-- Basic command line knowledge
+- Python 3.10+
+- Node.js 16+
+- **Docker** (Required for CrewAI agents)
+- Google Gemini API key
 
-### Installation
+> ⚠️ **Docker is mandatory** - CrewAI agents run in Docker containers for safe code execution
 
-1. **Install UV package manager:**
-   ```bash
-   pip install uv
-   ```
-
-2. **Set up your OpenAI API key:**
-   - Copy `.env.example` to `.env` (if it exists)
-   - Add your OpenAI API key:
-   ```
-   OPENAI_API_KEY=your_api_key_here
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   crewai install
-   ```
-
-### Run Your First Project
-
+### 1. Start Docker
 ```bash
-crewai run
+# Make sure Docker is running
+docker --version
+# Start Docker Desktop or Docker daemon
 ```
 
-That's it! AICOP will build a complete trading account management system as a demo.
-
-## 📁 Project Structure
-
-```
-aicop/
-├── 📄 README.md              # You are here!
-├── ⚙️ pyproject.toml          # Project configuration
-├── 🔑 .env                   # Your API keys (create this)
-├── 📁 src/aicop/
-│   ├── 🤖 crew.py            # AI agents definition
-│   ├── 🎯 main.py            # Main execution script
-│   └── 📁 config/
-│       ├── 👥 agents.yaml    # Agent configurations
-│       └── 📋 tasks.yaml     # Task definitions
-├── 📁 output/                # Generated code appears here
-│   ├── 📄 accounts.py        # Generated backend code
-│   ├── 🖥️ app.py             # Generated UI
-│   ├── 🧪 test_accounts.py   # Generated tests
-│   └── 📋 accounts_design.md # Design document
-└── 📁 knowledge/             # Additional context files
+### 2. Backend Setup
+```bash
+cd app
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
 ```
 
-## 🎮 Example: What AICOP Builds
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
 
-When you run the default example, AICOP creates a **Trading Account Management System**:
+### 4. Environment Variables
+Create `app/.env`:
+```env
+MODEL=gemini/gemini-1.5-flash
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-### Generated Files:
-- **`accounts.py`** - Complete Python class with methods for deposits, withdrawals, buying/selling stocks
-- **`app.py`** - Interactive web interface using Gradio
-- **`test_accounts.py`** - Comprehensive unit tests
-- **`accounts_design.md`** - Technical design documentation
+### 5. Usage
+1. **Start Backend**: Django API runs on http://localhost:8000
+2. **Start Frontend**: React app runs on http://localhost:3000
+3. Open http://localhost:3000 in your browser
+4. Enter your project requirements
+5. Specify module and class names
+6. Click "Generate Code"
+7. Download your generated files
 
-### Features Built:
-- ✅ Account creation and management
-- ✅ Deposit and withdrawal functionality
-- ✅ Stock trading simulation
-- ✅ Portfolio value calculation
-- ✅ Profit/loss tracking
-- ✅ Transaction history
-- ✅ Web-based user interface
-- ✅ Complete test coverage
+### 🔧 Running Backend & Frontend
 
-## 🛠️ Customizing AICOP
+**Backend (Django API):**
+```bash
+cd app
+python manage.py runserver
+# API available at: http://localhost:8000/api/
+# API docs at: http://localhost:8000/api/docs
+```
 
-### 1. Modify Requirements
-Edit `src/aicop/main.py` and change the `requirements` variable:
+**Frontend (React App):**
+```bash
+cd frontend
+npm start
+# Web app available at: http://localhost:3000
+```
 
+> **Note**: Both backend and frontend must be running simultaneously for the application to work properly.
+
+## 📝 Example
+
+**Input:**
+```
+Build me a todo web app in cyberpunk style
+```
+
+**Generated Code:**
+
+**todo_app.py**
 ```python
-requirements = """
-Your custom project requirements here.
-For example: A task management system that allows users to...
-"""
+class TodoApp:
+    def __init__(self):
+        self.tasks = []
+        self.task_id_counter = 1
+    
+    def add_task(self, title, description=""):
+        task = {
+            'id': self.task_id_counter,
+            'title': title,
+            'description': description,
+            'completed': False,
+            'created_at': datetime.now()
+        }
+        self.tasks.append(task)
+        self.task_id_counter += 1
+        return task
+    
+    def complete_task(self, task_id):
+        for task in self.tasks:
+            if task['id'] == task_id:
+                task['completed'] = True
+                return task
+        return None
+    
+    def get_tasks(self, completed=None):
+        if completed is None:
+            return self.tasks
+        return [task for task in self.tasks if task['completed'] == completed]
 ```
 
-### 2. Configure Agents
-Edit `src/aicop/config/agents.yaml` to customize:
-- Agent roles and responsibilities
-- AI models used (currently using Gemini)
-- Agent backstories and personalities
-
-### 3. Adjust Tasks
-Edit `src/aicop/config/tasks.yaml` to modify:
-- Task descriptions and expectations
-- Output file locations
-- Task dependencies
-
-## 🔧 Advanced Usage
-
-### Running Specific Commands
-
-```bash
-# Train the crew (improve performance over time)
-crewai train
-
-# Replay a previous execution
-crewai replay
-
-# Run tests on generated code
-crewai test
+**index.html** (Cyberpunk styled)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyberpunk To-Do</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #0f0;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        h1 {
+            color: #0ff;
+            text-shadow: 2px 2px 4px #000;
+        }
+        /* More cyberpunk styling... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cyberpunk To-Do</h1>
+        <input type="text" id="newTask" placeholder="Enter new task">
+        <button id="addTaskBtn">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        // Interactive JavaScript for task management
+    </script>
+</body>
+</html>
 ```
 
-### Adding Custom Tools
+**Output Files:**
+- `todo_app.py` - Complete Python module with TodoApp class
+- `index.html` - Cyberpunk-styled responsive web interface  
+- `todo_app_design.md` - Technical documentation and specifications
 
-You can extend AICOP by adding custom tools in the `src/aicop/tools/` directory for specialized functionality like:
-- Database connections
-- API integrations
-- File processing
-- External service calls
+## 🔧 API Endpoints
 
-## 🎯 Use Cases
-
-AICOP is perfect for:
-
-- 🏗️ **Rapid Prototyping** - Turn ideas into working demos quickly
-- 📚 **Learning Projects** - See how AI approaches software design
-- 🧪 **Proof of Concepts** - Validate ideas before full development
-- 🎓 **Educational Tools** - Understand software architecture patterns
-- 🚀 **Startup MVPs** - Get from concept to demo fast
+- `POST /api/run` - Generate code from requirements
+- `GET /api/health` - Health check endpoint
+- `GET /api/docs` - Interactive API documentation
 
 ## 🤝 Contributing
-
-Want to improve AICOP? Here's how:
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test with different requirements
-5. Submit a pull request
+4. Submit a pull request
 
-## 📚 Learn More
+## 📄 License
 
-- [CrewAI Documentation](https://docs.crewai.com)
-- [CrewAI GitHub](https://github.com/joaomdmoura/crewai)
-- [Join CrewAI Discord](https://discord.com/invite/X4JWnZnxPb)
+MIT License - see LICENSE file for details
 
-## 🆘 Troubleshooting
+## 🙏 Acknowledgments
 
-### Common Issues:
-
-**"No module named 'crewai'"**
-```bash
-pip install crewai[tools]
-```
-
-**"OpenAI API key not found"**
-- Make sure you have a `.env` file with `OPENAI_API_KEY=your_key`
-
-**"Permission denied"**
-- On Windows, run command prompt as administrator
-- On Mac/Linux, use `sudo` if needed
-
-**Generated code has errors**
-- Check the `output/` folder for all generated files
-- Review the design document first
-- Try running with different requirements
+- [CrewAI](https://github.com/joaomdmoura/crewAI) for the multi-agent framework
+- [Django Ninja](https://django-ninja.rest-framework.com/) for the fast API
+- [Google Gemini](https://ai.google.dev/) for the language model
 
 ---
 
-## 🌟 Ready to Build Something Amazing?
-
-1. Set up your API key
-2. Run `crewai run`
-3. Watch the magic happen!
-4. Customize for your own projects
-
-**Happy coding with your AI development crew! 🚀**
+**CodeCraft AI** - Where ideas become code ✨
