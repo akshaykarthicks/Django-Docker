@@ -25,7 +25,7 @@
 CodeCraft AI is an intelligent code generation platform that takes your project ideas in plain English and crafts complete applications with:
 - **Python backend modules** with complete business logic
 - **Frontend HTML/CSS/JS** interfaces
-- **Te
+  
 
 ## 🏗️ Architecture
 
